@@ -1,19 +1,20 @@
 #include "main.h"
 
+/**
+*main - prints text as output
+*
+*Return: always return 0
+*/
 int main(void)
 {
-    char *message = "_putchar\n";
+	char school[10] = "_putchar";
 
-    for (int i = 0; message[i] != '\0'; i++)
-    {
-        _putchar(message[i]);
-    }
+	int i;
 
-    return (0);
-}
-
-int _putchar(char c)
-{
-    /* Replace '1' with the file descriptor of your choice (usually 1 for stdout) */
-    return write(1, &c, 1);
+	for (i = 0; i < 8; i++)
+	{
+		_putchar(school[i]);
+	}
+	_putchar(10);
+	return (0);
 }
