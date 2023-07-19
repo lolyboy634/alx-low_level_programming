@@ -1,12 +1,31 @@
+#!/bin/bash
 #include <unistd.h>
 
-int main() {
+/* Function to write a character to standard output */
+int _putchar(char c)
+{
+    return write(1, &c, 1);
+}
+
+/* Function to print "_putchar" followed by a new line */
+void print_putchar()
+{
     char str[] = "_putchar\n";
-    ssize_t bytes_written = write(1, str, sizeof(str) - 1);
+    int i = 0;
 
-    if (bytes_written == -1) {
-        return 1;  // Error occurred while writing
+    while (str[i] != '\0')
+    {
+        _putchar(str[i]);
+        i++;
     }
+}
 
+/* Main function to execute the program */
+int main(void)
+{
+    print_putchar();
     return 0;
 }
+
+
+
