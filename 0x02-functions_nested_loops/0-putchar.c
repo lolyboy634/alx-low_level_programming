@@ -1,31 +1,19 @@
-#!/bin/bash
-#include <unistd.h>
+#include "main.h"
 
-/* Function to write a character to standard output */
-int _putchar(char c)
-{
-    return write(1, &c, 1);
-}
-
-/* Function to print "_putchar" followed by a new line */
-void print_putchar()
-{
-    char str[] = "_putchar\n";
-    int i = 0;
-
-    while (str[i] != '\0')
-    {
-        _putchar(str[i]);
-        i++;
-    }
-}
-
-/* Main function to execute the program */
 int main(void)
 {
-    print_putchar();
-    return 0;
+    char *message = "_putchar\n";
+
+    for (int i = 0; message[i] != '\0'; i++)
+    {
+        _putchar(message[i]);
+    }
+
+    return (0);
 }
 
-
-
+int _putchar(char c)
+{
+    /* Replace '1' with the file descriptor of your choice (usually 1 for stdout) */
+    return write(1, &c, 1);
+}
